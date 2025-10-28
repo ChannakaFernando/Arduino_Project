@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartPort Monitoring System - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* background: url('images/ship.jpg') no-repeat center center cover; */
+      margin: 0;
+      color: #fff;
+      background-image: url('../images/ship.jpg');
+      background-repeat: no-repeat; 
+      background-position: center;
+      background-size: cover;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 0;
+      font-weight: normal;
+      color: #ddd;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.15);
+    }
+    .card h3 {
+      margin: 10px 0;
+      font-size: 20px;
+      color: #00d4ff;
+    }
+    .card p {
+      font-size: 15px;
+      color: #eee;
+    }
+    .buttons {
+      margin-top: 40px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background: #28a745;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body >
+  <div class="content">
+    <h1>SmartPort Monitoring Systems</h1>
+    <h2>Real-Time Weather & Environmental Monitoring</h2>
+
+    <!-- Features Section -->
+    <div class="features">
+      <div class="card">
+        <h3> Temperature & Humidity</h3>
+      </div>
+      <div class="card">
+        <h3> Rain / Weather Integration</h3>
+      </div>
+      <div class="card">
+        <h3> Alerts & Thresholds</h3>
+      </div>
+      <div class="card">
+        <h3> Historical Data</h3>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="buttons">
+      <a href="Area1.html" class="btn">Area 1</a>
+      <a href="Area2.html" class="btn">Area 2</a>
+      <a href="Area3.html" class="btn">Area 3</a>
+    </div>
+  </div>
+</body>
+</html>

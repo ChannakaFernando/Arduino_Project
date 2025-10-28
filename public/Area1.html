@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area1 Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+
+<style>
+body { 
+    font-family: Arial, sans-serif; 
+    /* background: url('img.jpg') no-repeat center center/cover;  */
+    color: #fff; 
+    text-align: center; 
+    padding: 20px; 
+    position: relative;
+    min-height: 100vh;
+    background-image: url('../images/ship.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.5); 
+    z-index: -1;
+}
+
+header { margin-bottom: 20px; }
+h1 { font-size: 32px; margin-bottom: 5px; color:#f4f1e7; }
+h2 { font-size: 18px; margin-bottom: 20px; color:#cbc9ea; }
+
+/* Overview Cards */
+.cards { display:flex; flex-wrap:wrap; justify-content:center; margin:20px; gap:15px; }
+.card { background: rgba(252,245,245,0.1); padding:20px; border-radius:12px; width:250px; text-align:center; }
+.card .status { font-size:1.5em; margin:5px 0; }
+.card .value { font-size:1.8em; font-weight:bold; margin:10px 0; }
+.progress-bar { width:100%; background:#eee; height:12px; border-radius:6px; margin-top:10px; }
+.progress-bar div { height:100%; border-radius:6px; background-color:#00b894; }
+
+/* Charts */
+.charts { display:flex; flex-wrap:wrap; justify-content:center; margin:20px; gap:20px; }
+.chart-container { background: rgba(120, 133, 141, 0.1); padding:20px; border-radius:12px; width:600px; }
+
+/* Alerts */
+.alert { font-weight:bold; color:#ffcc00; margin-top:10px; }
+
+/* Buttons */
+.btn { display:inline-block; margin:20px 10px; padding:10px 20px; background:#28a745; color:#fff; text-decoration:none; border-radius:5px; }
+.btn:hover { background:#218838; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Area1 Dashboard</h1>
+<h2>Monitoring Moisture-Sensitive Materials</h2>
+</header>
+
+<!-- Alerts -->
+<div id="alert-message" class="alert"></div>
+
+<!-- Overview Cards -->
+<section class="cards">
+    <div class="card">
+        <h3>Current Rain Status</h3>
+        <div class="status" id="rain-status">🟢 Raining</div>
+        <p id="rain-text">It is currently raining</p>
+    </div>
+    <div class="card">
+        <h3>Real-time Rainfall</h3>
+        <div class="value" id="rainfall">0 mm</div>
+        <p id="ultrasonic">Rainfall Level: -- cm</p>
+    </div>
+    <div class="card">
+        <h3>Rain Prediction</h3>
+        <div class="value" id="rain-prediction">0%</div>
+        <div class="progress-bar"><div id="prediction-bar" style="width:0%;"></div></div>
+    </div>
+    <div class="card">
+        <h3>Temperature ,Humidity & Pressure</h3>
+        <p id="temperature">Temperature: -- °C</p>
+        <p id="humidity">Humidity: -- %</p>
+        <p id="pressure">Pressure: -- hPa</p>
+    </div>
+</section>
+
+<!-- Charts Section -->
+<section class="charts">
+    <div class="chart-container">
+        <h3>Rainfall Over Time</h3>
+        <canvas id="rainfallChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h3>Environmental Conditions</h3>
+        <canvas id="envChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h3>Temperature Chart</h3>
+        <canvas id="tempChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h3>Humidity Chart</h3>
+        <canvas id="humChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h3>Pressure Chart</h3>
+        <canvas id="pressureChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <h3>Rain Prediction</h3>
+        <canvas id="rainPredChart"></canvas>
+    </div>
+</section>
+
+<!-- Back Button -->
+<a href="index.html" class="btn">Back to Home</a>
+
+<script src="AreaScript.js" type="module"></script>
+
+</body>
+</html>
